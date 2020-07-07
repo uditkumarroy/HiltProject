@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    app:startDestination="@id/samplePostFragment">
+
+    <fragment
+        android:id="@+id/samplePostFragment"
+        android:name="com.hiltapplication.ui.SamplePostFragment"
+        android:label="fragment_sample_post"
+        tools:layout="@layout/fragment_sample_post" >
+        <action
+            android:id="@+id/action_samplePostFragment_to_nextFragment"
+            app:destination="@id/nextFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nextFragment"
+        android:name="com.hiltapplication.ui.NextFragment"
+        android:label="fragment_next"
+        tools:layout="@layout/fragment_next" />
+</navigation>
