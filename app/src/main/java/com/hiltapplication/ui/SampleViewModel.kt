@@ -3,13 +3,14 @@ package com.hiltapplication.ui
 import androidx.hilt.Assisted
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
+import com.hiltapplication.repository.post.SamplePostRepository
 import com.hiltapplication.repository.post.remote.SamplePostsService
 import com.hiltapplication.utils.NetworkHelper
 import kotlinx.coroutines.launch
 
 class SampleViewModel @ViewModelInject
 constructor(
-    private val samplePostsService: SamplePostsService,
+    private val samplePostRepository: SamplePostRepository,
     private val networkHelper: NetworkHelper,
     @Assisted private val savedStateHandle: SavedStateHandle
 ) : ViewModel() {
@@ -22,7 +23,7 @@ constructor(
     fun fetchPost(){
         viewModelScope.launch {
             if (networkHelper.isNetworkConnected()){
-                samplePostsService.getPosts().let {
+                samplePostRepository.getPosts().let {
 
                 }
             }

@@ -1,7 +1,7 @@
 package com.hiltapplication.di
 
 import com.hiltapplication.repository.post.remote.SamplePostApiHelper
-import com.hiltapplication.repository.post.SamplePostApiImpl
+import com.hiltapplication.repository.post.SamplePostRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,7 +14,7 @@ object SamplePostsModule {
 
     @Provides
     @FragmentScoped
-    fun provideApiHelper(apiHelper: SamplePostApiImpl): SamplePostApiHelper = apiHelper
+    fun provideApiHelper(apiHelper: SamplePostRepository): SamplePostApiHelper = apiHelper
 
 
 }
